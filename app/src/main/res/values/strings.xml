@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Rutafix</string>
+    <string name="registrate">Registrate</string>
+    <string name="rutafix">Rutafix</string>
+    <string name="victor_moya">Victor Moya</string>
+    <string name="la_aventura_esta_por_iniciar_por_favor_inicia_sesion">La aventura esta por iniciar, por favor inicia sesion</string>
+    <string name="escribe_tu_contrase_a_aqu">Escribe tu contraseña aquí</string>
+    <string name="escribe_tu_correo_aqu">Escribe tu correo aquí</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="recupera_tu_contrase_a">Recupera Tu Contraseña</string>
+    <string name="ingresa_con_google">Ingresa con Google</string>
+    <string name="no_tienes_cuenta">No tienes cuenta?</string>
+    <string name="reg_strate">Regístrate</string>
+    <string name="inicia_una_nueva_aventura_con_rutafix_y_descubre_una_nueva_forma_de_andar_en_la_carretera">Inicia una nueva aventura con Rutafix y descubre una nueva forma de andar en la carretera</string>
+    <string name="comienza">Comienza</string>
+</resources>

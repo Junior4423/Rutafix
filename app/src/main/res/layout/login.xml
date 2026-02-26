@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    PANTALLA DE INICIO DE SESIÓN (LOGIN)
+    Esta es la puerta de entrada para que el aventurero acceda a su cuenta.
+    El diseño mantiene la estética oscura de la app para un look moderno y profesional.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Login">
+
+    <!--
+        LOGO DE CABECERA (logorutafixpag2):
+        Una versión compacta del logo situada en la esquina superior para
+        no perder la identidad de marca mientras se llena el formulario.
+    -->
+    <ImageView
+        android:id="@+id/logorutafixpag2"
+        android:layout_width="170dp"
+        android:layout_height="136dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <!--
+        TÍTULO SECUNDARIO (tituloLogin):
+        Muestra el nombre "Rutafix" acompañando al logo de cabecera.
+    -->
+    <TextView
+        android:id="@+id/titulologin"
+        android:layout_width="221dp"
+        android:layout_height="80dp"
+        android:text="@string/rutafix"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <!--
+        MENSAJE DE INVITACIÓN (textologin):
+        Texto motivador en cursiva que guía al usuario a iniciar su sesión
+        para que la aventura pueda comenzar formalmente.
+    -->
+    <TextView
+        android:id="@+id/textologin"
+        android:layout_width="340dp"
+        android:layout_height="93dp"
+        android:text="@string/la_aventura_esta_por_iniciar_por_favor_inicia_sesion"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        android:textSize="25sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239" />
+
+    <!--
+        ICONOGRAFÍA DE APOYO (imageiconos):
+        Un elemento visual que acompaña a los campos de texto para
+        hacer la interfaz más intuitiva y agradable a la vista.
+    -->
+    <ImageView
+        android:id="@+id/imageIconos"
+        android:layout_width="95dp"
+        android:layout_height="124dp"
+        android:src="@drawable/iconos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405" />
+
+    <!--
+        CAMPO DE CORREO ELECTRÓNICO (textEmail):
+        Entrada de texto configurada específicamente para direcciones de email.
+        Tiene un fondo blanco sólido para asegurar una legibilidad máxima.
+    -->
+    <EditText
+        android:id="@+id/textEmail"
+        android:layout_width="243dp"
+        android:layout_height="51dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/escribe_tu_correo_aqu"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toEndOf="@+id/imageIconos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364" />
+
+    <!--
+        CAMPO DE CONTRASEÑA (textPassword):
+        Entrada segura que oculta los caracteres escritos.
+        Mantiene el mismo diseño que el campo de email para una interfaz balanceada.
+    -->
+    <EditText
+        android:id="@+id/textPassword"
+        android:layout_width="242dp"
+        android:layout_height="51dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FBFBFB"
+        android:ems="10"
+        android:hint="@string/escribe_tu_contrase_a_aqu"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintStart_toEndOf="@+id/imageIconos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <!--
+        BOTÓN DE INGRESO (botonIngresa):
+        Componente clave para validar las credenciales.
+        Utiliza el fondo redondeado para ser coherente con el estilo general de la app.
+    -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botonIngresa"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:background="@drawable/boton_redondo"
+        android:text="@string/ingresar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.608" />
+
+    <!--
+        ENLACE DE RECUPERACIÓN (RecuperarPassword):
+        Texto resaltado en verde para ayudar a aquellos que han olvidado sus llaves de acceso.
+    -->
+    <TextView
+        android:id="@+id/RecuperarPassword"
+        android:layout_width="277dp"
+        android:layout_height="36dp"
+        android:text="@string/recupera_tu_contrase_a"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonIngresa"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <!--
+        BOTÓN DE ACCESO CON GOOGLE (btnGoogle):
+        Contenedor interactivo que ofrece una vía rápida de acceso.
+        Incluye el logo oficial y un diseño redondeado sobre fondo blanco.
+    -->
+    <LinearLayout
+        android:id="@+id/btnGoogle"
+        android:layout_width="336dp"
+        android:layout_height="80dp"
+        android:background="@drawable/fondo_blanco_redondo"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RecuperarPassword"
+        app:layout_constraintVertical_bias="0.161">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="52dp"
+            android:src="@drawable/google" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/ingresa_con_google"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <!--
+        CONTENEDOR DE REGISTRO:
+        Grupo de elementos al final de la pantalla para invitar a nuevos usuarios a unirse.
+    -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnGoogle">
+
+        <!-- Pregunta informativa -->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_tienes_cuenta"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <!-- Enlace interactivo para ir al registro -->
+        <TextView
+            android:id="@+id/textRegistrateLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_strate"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="16dp"
+            android:minHeight="48dp"
+            android:minWidth="48dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

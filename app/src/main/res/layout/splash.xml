@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    PANTALLA DE CARGA (SPLASH SCREEN)
+    Es la primera impresión que recibe el aventurero al abrir Rutafix.
+    El fondo negro minimalista ayuda a centrar la atención en la marca.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Splash"
+    android:background="@color/black">
+
+    <!--
+        LOGO PRINCIPAL (LogoApp):
+        La imagen central que identifica la aplicación.
+        Ocupa un lugar privilegiado para que el usuario reconozca Rutafix de inmediato.
+    -->
+    <ImageView
+        android:id="@+id/LogoApp"
+        android:layout_width="349dp"
+        android:layout_height="493dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163"
+        app:srcCompat="@drawable/logo" />
+
+    <!--
+        NOMBRE DE LA APP (Nombreapp):
+        Texto con tipografía Serif y tamaño 80sp para dar un mensaje de bienvenida potente.
+        Representa la fuerza y el nombre de nuestra comunidad viajera.
+    -->
+    <TextView
+        android:id="@+id/Nombreapp"
+        android:layout_width="292dp"
+        android:layout_height="138dp"
+        android:text="@string/rutafix"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/LogoApp"
+        app:layout_constraintVertical_bias="0.745" />
+
+    <!--
+        CRÉDITOS DEL CREADOR (NombreDesarrollador):
+        Un detalle sutil en la parte inferior para indicar quién está detrás
+        de la creación de esta experiencia de aventura.
+    -->
+    <TextView
+        android:id="@+id/NombreDesarrollador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/victor_moya"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.935" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
