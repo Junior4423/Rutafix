@@ -14,9 +14,7 @@
     tools:context=".Login">
 
     <!--
-        LOGO DE CABECERA (logorutafixpag2):
-        Una versión compacta del logo situada en la esquina superior para
-        no perder la identidad de marca mientras se llena el formulario.
+        LOGO DE CABECERA (logorutafixpag2)
     -->
     <ImageView
         android:id="@+id/logorutafixpag2"
@@ -31,8 +29,7 @@
         app:layout_constraintVertical_bias="0.028" />
 
     <!--
-        TÍTULO SECUNDARIO (tituloLogin):
-        Muestra el nombre "Rutafix" acompañando al logo de cabecera.
+        TÍTULO SECUNDARIO (tituloLogin)
     -->
     <TextView
         android:id="@+id/titulologin"
@@ -50,9 +47,7 @@
         app:layout_constraintVertical_bias="0.072" />
 
     <!--
-        MENSAJE DE INVITACIÓN (textologin):
-        Texto motivador en cursiva que guía al usuario a iniciar su sesión
-        para que la aventura pueda comenzar formalmente.
+        MENSAJE DE INVITACIÓN (texto login)
     -->
     <TextView
         android:id="@+id/textologin"
@@ -71,9 +66,7 @@
         app:layout_constraintVertical_bias="0.239" />
 
     <!--
-        ICONOGRAFÍA DE APOYO (imageiconos):
-        Un elemento visual que acompaña a los campos de texto para
-        hacer la interfaz más intuitiva y agradable a la vista.
+        ICONOGRAFÍA DE APOYO (imageiconos)
     -->
     <ImageView
         android:id="@+id/imageIconos"

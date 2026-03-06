@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     PANTALLA DE INICIO (HOME)
-    Esta pantalla es el punto de partida donde el usuario decide dar el primer paso en su viaje.
-    El diseño utiliza un fondo negro para resaltar la identidad visual de Rutafix.
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,100 +12,88 @@
     tools:context=".Home">
 
     <!--
-        IMAGEN DE IDENTIDAD (imageView):
-        Muestra el logo oficial de la aplicación en la parte superior.
-        Mantiene la consistencia visual y refuerza la marca desde el inicio.
+        CONTENEDOR DE CABECERA:
+        Agrupa el logo y el título principal para mantener una estructura organizada.
     -->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="272dp"
-        android:layout_height="221dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintVertical_bias="0.05">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/logo_home_width"
+            android:layout_height="@dimen/logo_home_height"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/NombreApp_pag2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rutafix"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_title_main" />
+    </LinearLayout>
 
     <!--
-        TÍTULO DE BIENVENIDA (NombreApp_pag2):
-        Refuerza el nombre de la app con un tamaño de fuente imponente (55sp).
-        Es el centro de atención que prepara al usuario para lo que viene.
-    -->
-    <TextView
-        android:id="@+id/NombreApp_pag2"
-        android:layout_width="371dp"
-        android:layout_height="95dp"
-        android:text="@string/rutafix"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="55sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
-
-    <!--
-        ESLOGAN DE AVENTURA (BienvenidaRutafix):
-        Texto motivador que invita a descubrir una nueva forma de viajar.
-        Usa un color gris para ser legible sin competir visualmente con el título principal.
+        ESLOGAN DE AVENTURA:
+        Ubicado debajo de la cabecera.
     -->
     <TextView
         android:id="@+id/BienvenidaRutafix"
-        android:layout_width="375dp"
-        android:layout_height="114dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_standard"
         android:text="@string/inicia_una_nueva_aventura_con_rutafix_y_descubre_una_nueva_forma_de_andar_en_la_carretera"
         android:textAlignment="center"
         android:textColor="@color/grey"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.496" />
+        android:textSize="@dimen/text_size_subtitle"
+        app:layout_constraintBottom_toTopOf="@+id/BotonComienza"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer" />
 
     <!--
-        BOTÓN DE ACCIÓN (BotonComienza):
-        El componente estrella. Con bordes redondeados y texto grande,
-        invita al usuario a iniciar su aventura con un solo clic.
+        BOTÓN DE ACCIÓN:
+        Centralizado para invitar al inicio del viaje.
     -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BotonComienza"
-        android:layout_width="334dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/button_home_width"
+        android:layout_height="@dimen/button_home_height"
         android:background="@drawable/boton_redondo"
         android:text="@string/comienza"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="40sp"
+        android:textSize="@dimen/text_size_button_large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <!--
-        ENLACE DE REGISTRO (textRegistrate):
-        Opción alternativa en color verde para aquellos aventureros que
-        aún no tienen una cuenta y necesitan registrarse.
+        ENLACE DE REGISTRO:
+        Opción final en la parte inferior.
     -->
     <TextView
         android:id="@+id/textRegistrate"
-        android:layout_width="191dp"
-        android:layout_height="43dp"
-        android:textColor="@color/green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/touch_target_min"
+        android:minHeight="@dimen/touch_target_min"
         android:text="@string/registrate"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textColor="@color/green"
+        android:textSize="@dimen/text_size_subtitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintTop_toBottomOf="@+id/BotonComienza" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
