@@ -8,6 +8,7 @@
 
     <!-- Tamaños de texto -->
     <dimen name="text_size_splash">80sp</dimen>
+    <dimen name="text_size_developer">20sp</dimen>
     <dimen name="text_size_title_main">55sp</dimen>
     <dimen name="text_size_title_secondary">50sp</dimen>
     <dimen name="text_size_subtitle">25sp</dimen>
@@ -17,9 +18,9 @@
     <dimen name="text_size_small">16sp</dimen>
 
     <!-- Dimensiones de componentes - Splash -->
-    <dimen name="logo_splash_width">349dp</dimen>
-    <dimen name="logo_splash_height">493dp</dimen>
-    <dimen name="name_app_height_splash">138dp</dimen>
+    <dimen name="logo_splash_width">220dp</dimen>
+    <dimen name="logo_splash_height">220dp</dimen>
+    <dimen name="name_app_height_splash">wrap_content</dimen>
 
     <!-- Dimensiones de componentes - Home -->
     <dimen name="logo_home_width">272dp</dimen>

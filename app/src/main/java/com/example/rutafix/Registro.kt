@@ -2,19 +2,22 @@ package com.example.rutafix
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-
-class Login : AppCompatActivity() {
+/**
+ * PANTALLA DE REGISTRO
+ * Maneja la creación de cuenta y el regreso al login.
+ */
+class Registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.login)
-        
+        setContentView(R.layout.registro)
+
         // Ajuste para barras del sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -22,11 +25,12 @@ class Login : AppCompatActivity() {
             insets
         }
 
-        // Redirección al Registro
-        val btnRegistrate = findViewById<TextView>(R.id.textRegistrateLink)
-        btnRegistrate.setOnClickListener {
-            val intent = Intent(this, Registro::class.java)
+        // Flecha para volver al Login
+        val btnBack = findViewById<ImageView>(R.id.btnBackToLogin)
+        btnBack.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

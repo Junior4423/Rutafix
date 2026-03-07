@@ -1,99 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     PANTALLA DE INICIO (HOME)
+    Uso de LinearLayout para un apilamiento vertical de los elementos.
 -->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".Home">
 
-    <!--
-        CONTENEDOR DE CABECERA:
-        Agrupa el logo y el título principal para mantener una estructura organizada.
-    -->
-    <LinearLayout
-        android:id="@+id/headerContainer"
-        android:layout_width="match_parent"
+    <!-- Logo superior -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/logo_home_width"
+        android:layout_height="@dimen/logo_home_height"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/desc_logo_app"
+        android:src="@drawable/logo" />
+
+    <!-- Título y bienvenida -->
+    <TextView
+        android:id="@+id/NombreApp_pag2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05">
+        android:layout_marginTop="20dp"
+        android:text="@string/rutafix"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_title_main" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="@dimen/logo_home_width"
-            android:layout_height="@dimen/logo_home_height"
-            app:srcCompat="@drawable/logo" />
-
-        <TextView
-            android:id="@+id/NombreApp_pag2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/rutafix"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_title_main" />
-    </LinearLayout>
-
-    <!--
-        ESLOGAN DE AVENTURA:
-        Ubicado debajo de la cabecera.
-    -->
     <TextView
         android:id="@+id/BienvenidaRutafix"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_standard"
+        android:layout_margin="30dp"
         android:text="@string/inicia_una_nueva_aventura_con_rutafix_y_descubre_una_nueva_forma_de_andar_en_la_carretera"
         android:textAlignment="center"
         android:textColor="@color/grey"
-        android:textSize="@dimen/text_size_subtitle"
-        app:layout_constraintBottom_toTopOf="@+id/BotonComienza"
-        app:layout_constraintTop_toBottomOf="@+id/headerContainer" />
+        android:textSize="@dimen/text_size_subtitle" />
 
-    <!--
-        BOTÓN DE ACCIÓN:
-        Centralizado para invitar al inicio del viaje.
-    -->
+    <!-- Acciones principales -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/BotonComienza"
         android:layout_width="@dimen/button_home_width"
         android:layout_height="@dimen/button_home_height"
+        android:layout_marginTop="40dp"
         android:background="@drawable/boton_redondo"
         android:text="@string/comienza"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size_button_large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        android:textSize="@dimen/text_size_button_large" />
 
-    <!--
-        ENLACE DE REGISTRO:
-        Opción final en la parte inferior.
-    -->
     <TextView
         android:id="@+id/textRegistrate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="@dimen/touch_target_min"
-        android:minHeight="@dimen/touch_target_min"
+        android:layout_marginTop="30dp"
+        android:padding="16dp"
         android:text="@string/registrate"
-        android:textAlignment="center"
         android:textColor="@color/green"
         android:textSize="@dimen/text_size_subtitle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BotonComienza" />
+        android:clickable="true"
+        android:focusable="true" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

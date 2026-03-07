@@ -13,4 +13,22 @@
     <string name="reg_strate">Regístrate</string>
     <string name="inicia_una_nueva_aventura_con_rutafix_y_descubre_una_nueva_forma_de_andar_en_la_carretera">Inicia una nueva aventura con Rutafix y descubre una nueva forma de andar en la carretera</string>
     <string name="comienza">Comienza</string>
+
+    <!-- Strings para el Registro -->
+    <string name="registro_titulo">Registro</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="unete_a_la_aventura">Únete a la aventura y empieza a trazar tu ruta</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="correo_electronico">Correo Electrónico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="confirmar_contrase_a">Confirmar Contraseña</string>
+    <string name="terminos_y_condiciones">Acepto los términos y condiciones</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
+    <string name="inicia_sesion">Inicia Sesión</string>
+
+    <!-- Descripciones de accesibilidad -->
+    <string name="desc_boton_volver">Volver a la pantalla anterior</string>
+    <string name="desc_logo_app">Logo de Rutafix</string>
 </resources>
