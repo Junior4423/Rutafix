@@ -8,10 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-/**
- * PANTALLA DE REGISTRO
- * Maneja la creación de cuenta y el regreso al login.
- */
 class Registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
