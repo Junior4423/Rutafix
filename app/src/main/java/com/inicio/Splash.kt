@@ -1,4 +1,4 @@
-package com.example.rutafix
+package com.inicio
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.rutafix.Login
+import com.example.rutafix.R
 
 class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,18 +22,10 @@ class Splash : AppCompatActivity() {
             insets
         }
         Handler(Looper.getMainLooper()).postDelayed({
-
-
-            // se redirecciona a home
-            val intent = Intent(this, Home::class.java)
-
+            // Después del splash va al Login
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
-
-            // Cerrar el splash
             finish()
-
-
-        },
-            3000)
+        }, 3000)
     }
 }

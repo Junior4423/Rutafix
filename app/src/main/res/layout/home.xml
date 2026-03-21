@@ -11,7 +11,7 @@
     android:background="@color/black"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".Home">
+    tools:context="com.inicio.Home">
 
     <!-- Logo superior -->
     <ImageView

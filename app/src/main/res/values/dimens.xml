@@ -20,7 +20,6 @@
     <!-- Dimensiones de componentes - Splash -->
     <dimen name="logo_splash_width">220dp</dimen>
     <dimen name="logo_splash_height">220dp</dimen>
-    <dimen name="name_app_height_splash">wrap_content</dimen>
 
     <!-- Dimensiones de componentes - Home -->
     <dimen name="logo_home_width">272dp</dimen>

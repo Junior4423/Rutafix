@@ -31,4 +31,15 @@
     <!-- Descripciones de accesibilidad -->
     <string name="desc_boton_volver">Volver a la pantalla anterior</string>
     <string name="desc_logo_app">Logo de Rutafix</string>
+    <string name="espacio_en_blanco">Espacio en blanco</string>
+    <string name="bienvenido_a_tu_aventura">Bienvenido a tu aventura</string>
+
+    <!-- Menús y Navegación -->
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_productos">Productos</string>
+    <string name="menu_favoritos">Favoritos</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="menu_admin">Admin</string>
+    <string name="menu_cerrar_sesion">Cerrar Sesión</string>
+    <string name="fragmento_blanco">Fragmento en Blanco</string>
 </resources>

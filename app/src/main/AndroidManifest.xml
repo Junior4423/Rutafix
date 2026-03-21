@@ -11,24 +11,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rutafix">
+
+        <!-- 1. Home es el punto de partida -->
         <activity
-            android:name=".Registro"
-            android:exported="false" />
-        <activity
-            android:name=".Login"
-            android:exported="false" />
-        <activity
-            android:name=".Home"
-            android:exported="false" />
-        <activity
-            android:name=".Splash"
+            android:name="com.inicio.Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 2. Splash (intermedio) -->
+        <activity
+            android:name="com.inicio.Splash"
+            android:exported="false" />
+
+        <!-- 3. Login -->
+        <activity
+            android:name="com.example.rutafix.Login"
+            android:exported="false" />
+
+        <!-- 4. Main (Menú con Fragments) -->
+        <activity
+            android:name="com.main.MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.rutafix.Registro"
+            android:exported="false" />
     </application>
 
 </manifest>
