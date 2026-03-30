@@ -1,4 +1,4 @@
-package com.main.home
+package com.main.favorites
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import com.example.rutafix.R
 
 /**
- * Fragmento de Inicio que ahora funciona como Bienvenida.
+ * Fragmento genérico para la sección de Favoritos.
  */
-class HomeFragment : Fragment() {
+class FavoritesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,9 +19,9 @@ class HomeFragment : Fragment() {
     ): View? {
         val vista = inflater.inflate(R.layout.fragment_placeholder, container, false)
         
-        vista.findViewById<TextView>(R.id.tv_placeholder_titulo).text = "¡Bienvenido a RutaFix!"
-        vista.findViewById<TextView>(R.id.tv_placeholder_mensaje).text = "Tu asistente confiable para repuestos automotrices y servicios en carretera."
-
+        vista.findViewById<TextView>(R.id.tv_placeholder_titulo).text = "Mis Favoritos"
+        vista.findViewById<TextView>(R.id.tv_placeholder_mensaje).text = "Aquí podrás guardar los productos que más te interesan de RutaFix."
+        
         return vista
     }
 }

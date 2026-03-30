@@ -34,12 +34,26 @@
     <string name="espacio_en_blanco">Espacio en blanco</string>
     <string name="bienvenido_a_tu_aventura">Bienvenido a tu aventura</string>
 
-    <!-- Menús y Navegación -->
+    <!-- Menús y Navegación Actualizados -->
     <string name="menu_inicio">Inicio</string>
-    <string name="menu_productos">Productos</string>
+    <string name="menu_tienda">Catálogo de Repuestos</string>
+    <string name="menu_servicios">Servicios Especiales</string>
+    <string name="menu_mi_cuenta">Mi Cuenta</string>
     <string name="menu_favoritos">Favoritos</string>
+    <string name="menu_salir">Cerrar Sesión</string>
+
+    <!-- Otros strings necesarios -->
+    <string name="menu_productos">Tienda</string>
     <string name="menu_perfil">Perfil</string>
-    <string name="menu_admin">Admin</string>
-    <string name="menu_cerrar_sesion">Cerrar Sesión</string>
-    <string name="fragmento_blanco">Fragmento en Blanco</string>
+    <string name="explorar_tienda">Explorar Tienda</string>
+
+    <string name="agregar">Agregar</string>
+    <string name="_0_000_cop">0.000 COP</string>
+    <string name="marca">Marca</string>
+    <string name="nombre_del_producto">Nombre del Producto</string>
+    <string name="cat_logo_de_productos_rutafix">Tienda de Productos</string>
+
+    <!-- Inicio / Bienvenida -->
+    <string name="bienvenida_rutafix">¡Bienvenido a RutaFix!</string>
+    <string name="descripcion_inicio">Tu asistente confiable para repuestos automotrices y servicios en carretera. Explora nuestro catálogo para encontrar lo que necesitas.</string>
 </resources>
