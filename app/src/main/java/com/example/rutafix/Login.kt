@@ -3,36 +3,62 @@ package com.example.rutafix
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.rutafix.supabase.SupabaseConfig
 import com.main.MainActivity
+import io.github.jan.supabase.auth.auth
+import io.github.jan.supabase.auth.providers.builtin.Email
+import kotlinx.coroutines.launch
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.login)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
+        val editEmail = findViewById<EditText>(R.id.textEmail)
+        val editPass = findViewById<EditText>(R.id.textPassword)
         val botonIngresa = findViewById<Button>(R.id.botonIngresa)
+        val textRegistrateLink = findViewById<TextView>(R.id.textRegistrateLink)
+
         botonIngresa.setOnClickListener {
-            // Al ingresar, vamos al MainActivity
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            val email = editEmail.text.toString().trim()
+            val pass = editPass.text.toString().trim()
+
+            if (email.isEmpty() || pass.isEmpty()) {
+                Toast.makeText(this, "Ingresa correo y contraseña", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            loginUsuario(email, pass)
         }
 
-        val textRegistrateLink = findViewById<TextView>(R.id.textRegistrateLink)
         textRegistrateLink.setOnClickListener {
-            val intent = Intent(this, Registro::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, Registro::class.java))
+        }
+    }
+
+    private fun loginUsuario(email: String, pass: String) {
+        lifecycleScope.launch {
+            try {
+                // Validación real con Supabase
+                SupabaseConfig.client.auth.signInWith(Email) {
+                    this.email = email
+                    this.password = pass
+                }
+
+                // Si no lanza excepción, el login es correcto
+                Toast.makeText(this@Login, "¡Bienvenido!", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@Login, MainActivity::class.java))
+                finish()
+
+            } catch (e: Exception) {
+                // Si falla (usuario no existe o clave errónea) entra aquí
+                Toast.makeText(this@Login, "Credenciales incorrectas o usuario no existe", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

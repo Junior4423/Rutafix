@@ -56,4 +56,13 @@
     <!-- Inicio / Bienvenida -->
     <string name="bienvenida_rutafix">¡Bienvenido a RutaFix!</string>
     <string name="descripcion_inicio">Tu asistente confiable para repuestos automotrices y servicios en carretera. Explora nuestro catálogo para encontrar lo que necesitas.</string>
+
+    <!-- Strings para Editar Perfil -->
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="nueva_contrase_a_opcional">Nueva contraseña (opcional)</string>
+    <string name="guardar_cambios">Guardar Cambios</string>
+    <string name="perfil_actualizado_exito">Perfil actualizado con éxito</string>
+    <string name="campos_obligatorios_vacios">Campos obligatorios vacíos</string>
+    <string name="claves_no_coinciden">Las claves no coinciden</string>
+    <string name="error_clave_corta">La clave debe tener mínimo 6 caracteres</string>
 </resources>
