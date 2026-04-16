@@ -12,6 +12,7 @@ constraintlayout = "2.2.0"
 supabase = "3.1.1"
 ktor = "3.0.1"
 kotlinxSerialization = "1.7.3"
+googleid = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +32,7 @@ supabase-auth = { group = "io.github.jan-tennert.supabase", name = "auth-kt" }
 # Ktor and Serialization
 ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
+googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
