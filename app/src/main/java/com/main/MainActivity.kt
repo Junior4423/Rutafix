@@ -1,5 +1,6 @@
 package com.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -11,13 +12,18 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import com.example.rutafix.Login
 import com.example.rutafix.R
+import com.example.rutafix.supabase.SupabaseConfig
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.main.favorites.FavoritesFragment
 import com.main.home.HomeFragment
 import com.main.perfil.PerfilFragment
 import com.main.products.ProductsFragment
+import io.github.jan.supabase.auth.auth
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,70 +49,50 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // 1. Pantalla de Bienvenida al iniciar
         if (savedInstanceState == null) {
             reemplazarFragmento(HomeFragment(), "Inicio - RutaFix")
         }
 
-        // --- Lógica Menú Lateral ---
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_drawer_home -> {
-                    reemplazarFragmento(HomeFragment(), "Inicio - RutaFix")
-                }
-                R.id.nav_drawer_products -> {
-                    reemplazarFragmento(ProductsFragment(), "Catálogo de Repuestos")
-                }
-                R.id.nav_drawer_services -> {
-                    Toast.makeText(this, "Próximamente: Servicios de Asistencia en Ruta", Toast.LENGTH_SHORT).show()
-                }
-                R.id.nav_drawer_profile -> {
-                    reemplazarFragmento(PerfilFragment(), "Mi Cuenta")
-                }
-                R.id.nav_drawer_logout -> {
-                    finish()
-                }
+                R.id.nav_drawer_home -> reemplazarFragmento(HomeFragment(), "Inicio - RutaFix")
+                R.id.nav_drawer_products -> reemplazarFragmento(ProductsFragment(), "Catálogo de Repuestos")
+                R.id.nav_drawer_profile -> reemplazarFragmento(PerfilFragment(), "Mi Cuenta")
+                R.id.nav_drawer_logout -> cerrarSesion()
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
 
-        // --- Lógica Menú Inferior ---
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_bottom_home -> {
-                    reemplazarFragmento(HomeFragment(), "Inicio")
-                    true
-                }
-                R.id.nav_bottom_products -> {
-                    reemplazarFragmento(ProductsFragment(), "Tienda")
-                    true
-                }
-                R.id.nav_bottom_favorites -> {
-                    // Ahora redirige a un fragmento genérico de Favoritos
-                    Toast.makeText(this, "Sección de favoritos próximamente", Toast.LENGTH_SHORT).show()
-                    reemplazarFragmento(FavoritesFragment(), "Mis Favoritos")
-                    true
-                }
-                R.id.nav_bottom_profile -> {
-                    reemplazarFragmento(PerfilFragment(), "Mi Cuenta")
-                    true
-                }
+                R.id.nav_bottom_home -> { reemplazarFragmento(HomeFragment(), "Inicio"); true }
+                R.id.nav_bottom_products -> { reemplazarFragmento(ProductsFragment(), "Tienda"); true }
+                R.id.nav_bottom_favorites -> { reemplazarFragmento(FavoritesFragment(), "Mis Favoritos"); true }
+                R.id.nav_bottom_profile -> { reemplazarFragmento(PerfilFragment(), "Mi Cuenta"); true }
                 else -> false
             }
         }
+    }
 
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.closeDrawer(GravityCompat.START)
-                } else {
-                    isEnabled = false
-                    onBackPressedDispatcher.onBackPressed()
-                    isEnabled = true
-                }
+    private fun cerrarSesion() {
+        lifecycleScope.launch {
+            try {
+                // 1. Cerrar sesión en servidor
+                SupabaseConfig.client.auth.signOut()
+                
+                // NOTA: NO llamamos a limpiarCredenciales aquí para que la huella 
+                // pueda usarse en el próximo inicio de sesión, tal como pide la guía.
+
+                // 2. Redirigir al Login
+                val intent = Intent(this@MainActivity, Login::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            } catch (e: Exception) {
+                Toast.makeText(this@MainActivity, "Error al salir", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
     }
 
     private fun reemplazarFragmento(fragment: Fragment, titulo: String) {

@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    PANTALLA DE LOGIN
-    Organización mediante LinearLayouts para un diseño vertical y limpio.
--->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -13,21 +9,19 @@
     android:gravity="center_horizontal"
     tools:context=".Login">
 
-    <!-- Cabecera con Logo y Nombre -->
+    <!-- Cabecera con Logo -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
         android:gravity="center_vertical">
-
         <ImageView
             android:id="@+id/logorutafixpag2"
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:src="@drawable/logo"
             android:contentDescription="@string/desc_logo_app" />
-
         <TextView
             android:id="@+id/titulologin"
             android:layout_width="wrap_content"
@@ -38,7 +32,6 @@
             android:layout_marginStart="8dp" />
     </LinearLayout>
 
-    <!-- Mensaje de bienvenida -->
     <TextView
         android:id="@+id/textologin"
         android:layout_width="match_parent"
@@ -50,27 +43,22 @@
         android:textSize="22sp"
         android:textStyle="italic" />
 
-    <!-- Formulario de acceso -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
         android:padding="10dp">
-
         <ImageView
-            android:id="@+id/imageIconos"
             android:layout_width="60dp"
             android:layout_height="80dp"
             android:src="@drawable/iconos"
             android:contentDescription="@string/desc_logo_app" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginStart="10dp">
-
             <EditText
                 android:id="@+id/textEmail"
                 android:layout_width="match_parent"
@@ -81,7 +69,6 @@
                 android:padding="10dp"
                 android:layout_marginBottom="10dp"
                 android:importantForAutofill="no" />
-
             <EditText
                 android:id="@+id/textPassword"
                 android:layout_width="match_parent"
@@ -94,7 +81,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Botones y enlaces de acción -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botonIngresa"
         android:layout_width="300dp"
@@ -106,6 +92,18 @@
         android:textColor="@color/white"
         android:textSize="25sp" />
 
+    <!-- ID in_huella según la guía -->
+    <TextView
+        android:id="@+id/in_huella"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Ingresar con Huella"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:visibility="gone" />
+
     <TextView
         android:id="@+id/RecuperarPassword"
         android:layout_width="wrap_content"
@@ -115,28 +113,23 @@
         android:textColor="@color/green"
         android:textSize="18sp"
         android:padding="16dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
         android:clickable="true"
         android:focusable="true" />
 
-    <!-- Acceso con redes sociales -->
     <LinearLayout
         android:id="@+id/btnGoogle"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/fondo_blanco_redondo"
         android:gravity="center"
         android:clickable="true"
         android:focusable="true">
-
         <ImageView
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/google"
             android:contentDescription="@string/desc_logo_app" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -146,19 +139,16 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <!-- Enlace a registro -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="30dp">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no_tienes_cuenta"
             android:textColor="@color/white" />
-
         <TextView
             android:id="@+id/textRegistrateLink"
             android:layout_width="wrap_content"
@@ -169,9 +159,7 @@
             android:textStyle="bold"
             android:clickable="true"
             android:focusable="true"
-            android:padding="16dp"
-            android:minWidth="48dp"
-            android:minHeight="48dp" />
+            android:padding="16dp" />
     </LinearLayout>
 
 </LinearLayout>
