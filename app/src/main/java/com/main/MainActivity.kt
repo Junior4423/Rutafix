@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                 // 1. Cerrar sesión en servidor
                 SupabaseConfig.client.auth.signOut()
                 
-                // NOTA: NO llamamos a limpiarCredenciales aquí para que la huella 
+                // NOTA: NO llamamos a limpiarCredenciales aquí para que la huella
                 // pueda usarse en el próximo inicio de sesión, tal como pide la guía.
 
                 // 2. Redirigir al Login

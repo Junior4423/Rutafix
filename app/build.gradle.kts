@@ -36,6 +36,16 @@ android {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
         }
     }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+// SOLUCIÓN AL ERROR SDK 36: Forzamos la versión compatible con SDK 35
+configurations.all {
+    resolutionStrategy {
+        force("androidx.browser:browser:1.8.0")
+    }
 }
 
 dependencies {
@@ -45,23 +55,23 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     
-    // Google Auth (Legacy)
+    // Google Auth & Biometric
     implementation(libs.google.auth)
-    
-    // Biometric
     implementation(libs.biometric)
-    
-    // Google Identity (Credential Manager)
     implementation(libs.googleid)
     
     // Supabase
     implementation(platform(libs.supabase.bom))
     implementation(libs.supabase.postgrest)
     implementation(libs.supabase.auth)
-    
+    implementation(libs.supabase.storage)
+
     // Ktor y Serialización
     implementation(libs.ktor.client.android)
     implementation(libs.kotlinx.serialization.json)
+
+    // Coil
+    implementation(libs.coil)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

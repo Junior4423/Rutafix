@@ -4,6 +4,7 @@ import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.postgrest.Postgrest
+import io.github.jan.supabase.storage.Storage
 import io.ktor.client.engine.android.Android
 
 object SupabaseConfig {
@@ -16,11 +17,11 @@ object SupabaseConfig {
             supabaseUrl = SUPABASE_URL,
             supabaseKey = SUPABASE_KEY
         ) {
-            // Con Ktor 3.0, el motor se configura de esta manera
             httpEngine = Android.create()
 
             install(Auth)
             install(Postgrest)
+            install(Storage)
         }
     }
 }
